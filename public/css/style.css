@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: 'constructio';
+    src: url('font/ConstructioGrotesk-Regular.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+:root {
+    --logo: 1.5vw;
+    --bleu: #0F194A;
+    --blanc: #FFFFFF;
+    --btn-font-size: 1vw;
+}
+
+body {
+    background-color: var(--bleu);
+}
+
+.loader {
+    background-color: var(--blanc);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+}
+
+.loader img {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    width: 30%;
+    height: 40%;
+    border-radius: 5px;
+}
+
+.hero {
+    height: 100vh;
+    width: 100%;
+}
+
+.hero nav {
+    width: 100%;
+    padding: 3vw;
+    font-family: 'constructio';
+}
+
+.hero nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero nav ul li {
+    font-family: 'constructio';
+    color: var(--blanc);
+    font-size: var(--logo);
+    letter-spacing: 1px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.hero nav ul li button {
+    width: 150px;
+    padding: 10px;
+    color: #0F194A;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    font-family: 'constructio';
+    border: none;
+    outline: none;
+    font-size: var(--btn-font-size);
+    position: relative;
+    cursor: pointer;
+}
+
+.hero nav ul li button .btn-nav-absolute {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 200%;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0F194A;
+    font-size: var(--btn-font-size);
+    font-family: 'constructio';
+    transition: all .5s ease-in-out;
+}
+
+.hero nav ul li .btn-nav-relative {
+    transition: all .5s ease-in-out;
+}
+
+.hero nav ul li:hover .btn-nav-relative {
+    transform: translateY(-200%);
+}
+
+.hero nav ul li:hover .btn-nav-absolute {
+    top: 0;
+}
+
+.hero .container {
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.hero .container .slider-container {
+    width: 95%;
+    height: 100%;
+    border-radius: 5px;
+    background: var(--blanc);
+    overflow: hidden;
+    position: relative;
+}
+
+.hero .container .slider-container .slides {
+    height: 100%;
+    display: flex;
+    width: 400%;
+}
+
+.hero .container .slider-container .slides .slide {
+    width: calc(100%/4);
+    height: 100%;
+}
+
+.hero .container .slider-container .slides .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+
+.hero .container .slider-container .controls {
+    z-index: 5;
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%, -98%);
+    width: auto;
+    display: flex;
+}
+
+.hero .container .slider-container .controls .control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--blanc);
+    margin: 0vw .25vw;
+    opacity: .5;
+}
+
+.hero .container .slider-container .controls .control:active {
+    opacity: 1;
+}
